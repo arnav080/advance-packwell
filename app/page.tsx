@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { HeroButton } from "@/components/ui/hero-button";
 import { Case } from "@/components/ui/cases-with-infinite-scroll";
+import { FancyCard } from "@/components/ui/fancy-card";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen w-full bg-background">
       {/* Hero Section with Rounded Bottom Transition */}
-      <section className="relative h-[99vh] w-full overflow-hidden rounded-b-[48px] bg-primary">
+      <section id="home" className="relative h-[99vh] w-full overflow-hidden rounded-b-[48px] bg-primary">
         {/* Background Image Container */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -29,7 +31,7 @@ export default function Home() {
 
       {/* Demo Text Section below Hero */}
       {/* Stats and Info Section */}
-      <section className="px-6 py-24 md:px-20 lg:px-32">
+      <section id="about" className="px-6 py-24 md:px-20 lg:px-32">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
           {/* Left Column: Text Content */}
           <div className="flex flex-col justify-center">
@@ -38,7 +40,7 @@ export default function Home() {
               brands that <br />
               <span className="text-zinc-600">ship at scale.</span>
             </h2>
-            <div className="mt-12 max-w-lg space-y-6">
+            <div className="mt-10 max-w-lg space-y-6">
               <p className="text-lg leading-relaxed text-zinc-400">
                 Advance Packwell is a leading cardboard box manufacturer delivering high-strength, sustainable, and precision-engineered packaging solutions for businesses across industries. With over two decades of manufacturing excellence, we specialize in corrugated boxes, custom packaging, bulk cartons, and export-grade shipping containers designed to protect what matters most.
               </p>
@@ -73,6 +75,54 @@ export default function Home() {
 
       {/* Infinite Scroll Cases Section */}
       <Case />
+
+      {/* Featured Products / Fancy Cards Section */}
+      <section id="products" className="px-6 py-32 md:px-20 lg:px-32">
+        <div className="mb-10 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+          <h2 className="max-w-2xl font-helvetica text-4xl font-light leading-none tracking-tight text-white md:text-6xl lg:text-7xl">
+            Built for every <br />
+            <span className="text-zinc-600">industry scale.</span>
+          </h2>
+          <p className="max-w-sm text-lg text-zinc-400">
+            From single units to million-box production runs, our infrastructure adapts to your needs.
+            From single units to million-box production runs, our infrastructure adapts to your needs.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <FancyCard
+            title="Corrugated Boxes"
+            subheading="Durable, high-strength corrugated boxes designed for secure shipping and storage. Customizable sizes to fit your needs."
+            imageSrc="/cooperation/contract.png"
+          />
+          <FancyCard
+            title="Custom Packaging"
+            subheading="Tailored packaging solutions that reflect your brand identity. Precision-engineered for product protection and display."
+            imageSrc="/cooperation/odm.png"
+          />
+          <FancyCard
+            title="Bulk Cartons"
+            subheading="Cost-effective bulk carton solutions for high-volume logistics. Optimized for stacking strength and transport efficiency."
+            imageSrc="/cooperation/oem.png"
+          />
+        </div>
+
+        {/* Contact CTA below cards */}
+        <div className="mt-12 flex items-center justify-center gap-4 text-zinc-400">
+          <div className="flex size-8 items-center justify-center border border-white">
+            <ArrowUpRight className="size-5 text-white" />
+          </div>
+          <p className="text-xl font-light">
+            Need packaging?{" "}
+            <a
+              href="#contact"
+              className="text-white underline decoration-[#2F6B4F] decoration-2 underline-offset-8 transition-colors hover:text-secondary"
+            >
+              Contact us
+            </a>
+          </p>
+        </div>
+      </section>
     </main>
   );
 }
