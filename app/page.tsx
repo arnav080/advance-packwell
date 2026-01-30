@@ -3,6 +3,7 @@ import { HeroButton } from "@/components/ui/hero-button";
 import { Case } from "@/components/ui/cases-with-infinite-scroll";
 import { FancyCard } from "@/components/ui/fancy-card";
 import { ArrowUpRight } from "lucide-react";
+import { TestimonialsInfiniteScroll } from "@/components/ui/testimonials-infinite-scroll";
 
 export default function Home() {
   return (
@@ -123,6 +124,9 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsInfiniteScroll />
     </main>
   );
 }
