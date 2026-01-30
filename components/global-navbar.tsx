@@ -12,9 +12,11 @@ import {
     NavbarLogo,
 } from "@/components/ui/resizable-navbar";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function GlobalNavbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("#home");
 
     const navItems = [
         { name: "Home", link: "#home" },
@@ -24,11 +26,33 @@ export function GlobalNavbar() {
         { name: "Contact", link: "/contact" },
     ];
 
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const sections = ["home", "about", "products"];
+            let currentSection = "#home";
+
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    // If the top of the section is near the top of the viewport
+                    if (rect.top <= 100) {
+                        currentSection = `#${section}`;
+                    }
+                }
+            }
+            setActiveSection(currentSection);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <Navbar className="fixed top-2">
             <NavBody>
                 <NavbarLogo />
-                <NavItems items={navItems} />
+                <NavItems items={navItems} activeSection={activeSection} />
                 <div className="flex items-center">
                     <Button className="!cursor-pointer" style={{ cursor: "pointer" }} onClick={() => console.log("Contact Clicked")}>
                         Contact us
@@ -53,7 +77,12 @@ export function GlobalNavbar() {
                             <a
                                 key={idx}
                                 href={item.link}
-                                className="text-lg font-medium text-black dark:text-white"
+                                className={cn(
+                                    "text-lg font-medium transition-colors",
+                                    activeSection === item.link
+                                        ? "text-[#2F6B4F] border-b-2 border-[#2F6B4F]"
+                                        : "text-black dark:text-white"
+                                )}
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {item.name}

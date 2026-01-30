@@ -28,6 +28,7 @@ interface NavItemsProps {
     name: string;
     link: string;
   }[];
+  activeSection?: string;
   className?: string;
   onItemClick?: () => void;
 }
@@ -114,7 +115,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
+export const NavItems = ({ items, activeSection, className, onItemClick }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
   const pathname = usePathname();
 
@@ -127,7 +128,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       )}
     >
       {items.map((item, idx) => {
-        const isActive = pathname === item.link;
+        const isActive = pathname === item.link || activeSection === item.link;
         return (
           <a
             onMouseEnter={() => setHovered(idx)}

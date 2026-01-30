@@ -18,7 +18,7 @@ function Case() {
       <div className="">
         <div className="flex flex-col gap-10">
           <h2 className="font-helvetica text-4xl font-light leading-none tracking-tight text-white md:text-6xl lg:text-7xl text-center lg:text-left lg:max-w-3xl">
-            Trusted by hundreds of <br className="hidden lg:block" /> businesses worldwide
+            Trusted by <span className="text-secondary">hundreds</span> of <br className="hidden lg:block" /> businesses worldwide
           </h2>
           <Carousel
             setApi={setApi}

@@ -14,7 +14,13 @@ export function TestimonialsInfiniteScroll() {
     const [api, setApi] = useState<CarouselApi>();
 
     return (
-        <section className="py-20 px-6 md:px-20 lg:px-32 relative">
+        <section className="py-32 px-6 md:px-20 lg:px-32 relative">
+            <div className="mb-16 flex flex-col items-center text-center">
+                <h2 className="font-helvetica text-4xl font-light tracking-tight text-white md:text-5xl lg:text-6xl">
+                    Feedback from Industry Professionals
+                </h2>
+            </div>
+
             <div className="relative w-full [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
                 <Carousel
                     setApi={setApi}

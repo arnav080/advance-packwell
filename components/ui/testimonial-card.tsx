@@ -25,7 +25,7 @@ export function TestimonialCard({
         >
             <div className="flex flex-col gap-4">
                 <Quote className="size-8 rotate-180 border-none fill-secondary text-secondary" style={{ transform: "scaleX(-1)" }} />
-                <p className="text-center text-sm leading-snug font-medium">
+                <p className="text-center text-sm leading-tight font-medium">
                     {quote}
                 </p>
             </div>
