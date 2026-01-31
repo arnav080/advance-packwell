@@ -5,6 +5,8 @@ import { FancyCard } from "@/components/ui/fancy-card";
 import { ArrowUpRight } from "lucide-react";
 import { TestimonialsInfiniteScroll } from "@/components/ui/testimonials-infinite-scroll";
 import { GalleryScroll } from "@/components/ui/gallery-scroll";
+import { ContactSection } from "@/components/contact-section";
+import { FooterSection } from "@/components/footer-section";
 
 export default function Home() {
   return (
@@ -130,9 +132,34 @@ export default function Home() {
       <TestimonialsInfiniteScroll />
 
       {/* Gallery Section */}
-      <section id="gallery">
+      <section id="gallery" className="relative z-20 mb-[0px] bg-background pb-12">
         <GalleryScroll />
       </section>
+
+      {/* Contact Section - "Caves in" to reveal footer and gradient */}
+      <div className="relative z-10 overflow-hidden bg-black">
+        {/* Fallback CSS Gradient + Image Layer */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          {/* CSS Gradient Glow (Guaranteed visibility) */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#2F6B4F]/40 via-[#1d1d1b] to-[#1d1d1b] scale-110" />
+
+          {/* Image Gradient */}
+          <img
+            src="/gradient.png"
+            alt="Gradient Background"
+            className="w-full h-full object-cover opacity-100 scale-110"
+          />
+        </div>
+
+        <div className="relative z-20">
+          <ContactSection />
+        </div>
+
+        {/* Footer Section - Sits on top of the continuous gradient background */}
+        <div className="relative z-10">
+          <FooterSection />
+        </div>
+      </div>
     </main>
   );
 }

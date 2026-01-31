@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import {
     Navbar,
     NavBody,
@@ -16,28 +17,33 @@ import { cn } from "@/lib/utils";
 
 export function GlobalNavbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState("#home");
-
+    const [activeSection, setActiveSection] = useState("");
     const navItems = [
-        { name: "Home", link: "#home" },
-        { name: "About", link: "#about" },
-        { name: "Products", link: "#products" },
-        { name: "Gallery", link: "#gallery" },
-        { name: "Contact", link: "/contact" },
+        { name: "Home", link: "/#home" },
+        { name: "About", link: "/#about" },
+        { name: "Products", link: "/#products" },
+        { name: "Gallery", link: "/#gallery" },
+        { name: "Contact", link: "/#contact" },
     ];
 
+    const pathname = usePathname();
+
     React.useEffect(() => {
+        if (pathname !== "/") {
+            setActiveSection("");
+            return;
+        }
+
         const handleScroll = () => {
-            const sections = ["home", "about", "products", "gallery"];
-            let currentSection = "#home";
+            const sections = ["home", "about", "products", "gallery", "contact"];
+            let currentSection = "/#home";
 
             for (const section of sections) {
                 const element = document.getElementById(section);
                 if (element) {
                     const rect = element.getBoundingClientRect();
-                    // If the top of the section is near the top of the viewport
                     if (rect.top <= 100) {
-                        currentSection = `#${section}`;
+                        currentSection = `/#${section}`;
                     }
                 }
             }
@@ -45,8 +51,9 @@ export function GlobalNavbar() {
         };
 
         window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Initial check
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [pathname]);
 
     return (
         <Navbar className="fixed top-2">
@@ -79,7 +86,7 @@ export function GlobalNavbar() {
                                 href={item.link}
                                 className={cn(
                                     "text-lg font-medium transition-colors",
-                                    activeSection === item.link
+                                    (activeSection === item.link || pathname === item.link)
                                         ? "!text-[#2F6B4F] border-b-2 border-[#2F6B4F]"
                                         : "!text-white"
                                 )}
