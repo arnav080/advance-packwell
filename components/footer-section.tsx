@@ -18,9 +18,9 @@ export function FooterSection() {
 
                     {/* Brand and Catchphrase */}
                     <div className="flex flex-col gap-8 max-w-md">
-                        <h2 className="font-helvetica text-4xl font-light leading-tight text-white md:text-5xl">
+                        <h2 className="font-helvetica text-4xl font-light leading-tight text-zinc-500 md:text-5xl">
                             Ready to <br />
-                            <span className="text-zinc-500">upgrade your packaging?</span>
+                            <span className="text-white">upgrade your packaging</span>?
                         </h2>
                     </div>
 
