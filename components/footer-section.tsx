@@ -80,9 +80,19 @@ export function FooterSection() {
 
                 {/* Bottom Bar: Copyright & Socials */}
                 <div className="mt-24 flex flex-col-reverse items-start justify-between gap-8 pt-12 border-t border-white/10 md:flex-row md:items-center">
-                    <span className="text-sm text-zinc-500">
-                        © {new Date().getFullYear()} Advance Packwell. All rights reserved.
-                    </span>
+                    <div className="flex flex-col gap-2">
+                        <span className="text-sm text-zinc-500">
+                            © {new Date().getFullYear()} Advance Packwell. All rights reserved.
+                        </span>
+                        <a
+                            href="https://wa.me/916239722401"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-zinc-500 hover:text-secondary transition-colors"
+                        >
+                            Built and maintained by @arnav
+                        </a>
+                    </div>
 
                     <div className="flex gap-6">
                         <Link href="https://twitter.com" className="text-zinc-400 hover:text-white transition-colors">

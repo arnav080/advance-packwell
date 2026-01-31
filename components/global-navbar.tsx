@@ -61,9 +61,11 @@ export function GlobalNavbar() {
                 <NavbarLogo />
                 <NavItems items={navItems} activeSection={activeSection} />
                 <div className="flex items-center">
-                    <Button className="!cursor-pointer" style={{ cursor: "pointer" }} onClick={() => console.log("Contact Clicked")}>
-                        Contact us
-                    </Button>
+                    <a href="https://wa.me/919915104301" target="_blank" rel="noopener noreferrer">
+                        <Button className="!cursor-pointer" style={{ cursor: "pointer" }}>
+                            Contact us
+                        </Button>
+                    </a>
                 </div>
             </NavBody>
 
@@ -96,9 +98,11 @@ export function GlobalNavbar() {
                             </a>
                         ))}
                         <div className="flex flex-col mt-4 gap-2 w-full">
-                            <Button variant="outline" className="w-full justify-center !cursor-pointer" style={{ cursor: "pointer" }} onClick={() => console.log("Contact Clicked")}>
-                                Contact us
-                            </Button>
+                            <a href="https://wa.me/919915104301" target="_blank" rel="noopener noreferrer" className="w-full">
+                                <Button variant="outline" className="w-full justify-center !cursor-pointer" style={{ cursor: "pointer" }}>
+                                    Contact us
+                                </Button>
+                            </a>
                         </div>
                     </div>
                 </MobileNavMenu>
