@@ -25,7 +25,7 @@ export function FooterSection() {
                     </div>
 
                     {/* Links Columns */}
-                    <div className="flex flex-wrap gap-12 md:gap-24">
+                    <div className="grid grid-cols-2 gap-12 md:gap-x-24 md:gap-y-12 lg:grid-cols-4">
                         <div className="flex flex-col gap-6">
                             <span className="text-sm font-semibold uppercase tracking-wider text-zinc-500">Company</span>
                             <Link href="/about" className="text-zinc-300 hover:text-white transition-colors">About Us</Link>
@@ -44,6 +44,28 @@ export function FooterSection() {
                             <Link href="/privacy" className="text-zinc-300 hover:text-white transition-colors">Privacy Policy</Link>
                             <Link href="/terms" className="text-zinc-300 hover:text-white transition-colors">Terms of Service</Link>
                             <Link href="/returns" className="text-zinc-300 hover:text-white transition-colors">Return Policy</Link>
+                        </div>
+
+                        <div className="flex flex-col gap-6 lg:max-w-[280px]">
+                            <span className="text-sm font-semibold uppercase tracking-wider text-zinc-500">Contact</span>
+                            <div className="flex flex-col gap-3">
+                                <div className="flex flex-col gap-1 text-sm">
+                                    <span className="text-zinc-500 uppercase tracking-tight font-medium text-xs">Num:</span>
+                                    <span className="text-zinc-300 font-light">+91 98765 43210</span>
+                                </div>
+                                <div className="flex flex-col gap-1 text-sm">
+                                    <span className="text-zinc-500 uppercase tracking-tight font-medium text-xs">Email:</span>
+                                    <Link href="mailto:info@advancepackwell.com" className="text-zinc-300 hover:text-white transition-colors font-light">
+                                        info@advancepackwell.com
+                                    </Link>
+                                </div>
+                                <div className="flex flex-col gap-1 text-sm">
+                                    <span className="text-zinc-500 uppercase tracking-tight font-medium text-xs">Address:</span>
+                                    <span className="text-zinc-300 font-light leading-relaxed">
+                                        123 Industrial Area, Phase II, New Delhi
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
