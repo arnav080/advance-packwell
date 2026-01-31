@@ -22,13 +22,13 @@ export function GlobalNavbar() {
         { name: "Home", link: "#home" },
         { name: "About", link: "#about" },
         { name: "Products", link: "#products" },
-        { name: "Gallery", link: "/gallery" },
+        { name: "Gallery", link: "#gallery" },
         { name: "Contact", link: "/contact" },
     ];
 
     React.useEffect(() => {
         const handleScroll = () => {
-            const sections = ["home", "about", "products"];
+            const sections = ["home", "about", "products", "gallery"];
             let currentSection = "#home";
 
             for (const section of sections) {
@@ -80,8 +80,8 @@ export function GlobalNavbar() {
                                 className={cn(
                                     "text-lg font-medium transition-colors",
                                     activeSection === item.link
-                                        ? "text-[#2F6B4F] border-b-2 border-[#2F6B4F]"
-                                        : "text-black dark:text-white"
+                                        ? "!text-[#2F6B4F] border-b-2 border-[#2F6B4F]"
+                                        : "!text-white"
                                 )}
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >

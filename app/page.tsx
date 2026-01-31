@@ -4,6 +4,7 @@ import { Case } from "@/components/ui/cases-with-infinite-scroll";
 import { FancyCard } from "@/components/ui/fancy-card";
 import { ArrowUpRight } from "lucide-react";
 import { TestimonialsInfiniteScroll } from "@/components/ui/testimonials-infinite-scroll";
+import { GalleryScroll } from "@/components/ui/gallery-scroll";
 
 export default function Home() {
   return (
@@ -86,7 +87,6 @@ export default function Home() {
           </h2>
           <p className="max-w-sm text-lg text-zinc-400">
             From single units to million-box production runs, our infrastructure adapts to your needs.
-            From single units to million-box production runs, our infrastructure adapts to your needs.
           </p>
         </div>
 
@@ -118,6 +118,7 @@ export default function Home() {
             <a
               href="#contact"
               className="text-white underline decoration-[#2F6B4F] decoration-2 underline-offset-8 transition-colors hover:text-secondary"
+
             >
               Contact us
             </a>
@@ -127,6 +128,11 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <TestimonialsInfiniteScroll />
+
+      {/* Gallery Section */}
+      <section id="gallery">
+        <GalleryScroll />
+      </section>
     </main>
   );
 }
