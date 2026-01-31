@@ -51,7 +51,14 @@ export function FooterSection() {
                             <div className="flex flex-col gap-3">
                                 <div className="flex flex-col gap-1 text-sm">
                                     <span className="text-zinc-500 uppercase tracking-tight font-medium text-xs">Num:</span>
-                                    <span className="text-zinc-300 font-light">+91 98765 43210</span>
+                                    <div className="flex flex-col gap-1">
+                                        <a href="tel:+919915104301" className="text-zinc-300 font-light hover:text-white transition-colors">
+                                            +91 99151 04301
+                                        </a>
+                                        <a href="tel:+919872624301" className="text-zinc-300 font-light hover:text-white transition-colors">
+                                            +91 98726 24301
+                                        </a>
+                                    </div>
                                 </div>
                                 <div className="flex flex-col gap-1 text-sm">
                                     <span className="text-zinc-500 uppercase tracking-tight font-medium text-xs">Email:</span>

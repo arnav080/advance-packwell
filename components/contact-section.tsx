@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import { LocationMap } from "./location-map";
@@ -46,31 +46,53 @@ export function ContactSection() {
                                 Have a project in mind or need a quote? We’d love to hear from you. Reach out to our team today.
                             </p>
 
-                            <div className="space-y-6">
-                                <div className="flex items-center gap-4 text-white">
-                                    <div className="flex bg-white/5 p-3 rounded-full border border-white/10">
-                                        <Mail className="size-5 text-secondary" />
+                            <div className="bg-primary/60 backdrop-blur-xl rounded-[32px] p-8 space-y-7 border border-white/20 shadow-2xl">
+                                <a
+                                    href="mailto:info@advancepackwell.com"
+                                    className="flex items-center gap-5 text-white group transition-all"
+                                >
+                                    <Mail className="size-6 text-white stroke-[1.5] group-hover:scale-110 transition-transform" />
+                                    <span className="text-lg font-light tracking-tight leading-tight border-b border-transparent group-hover:border-white/30 truncate">
+                                        info@advancepackwell.com
+                                    </span>
+                                </a>
+
+                                <div className="flex items-center gap-5 text-white group transition-all">
+                                    <Phone className="size-6 text-white stroke-[1.5] group-hover:scale-110 transition-transform" />
+                                    <div className="flex flex-col gap-1">
+                                        <a href="tel:+919915104301" className="text-lg font-light tracking-tight leading-tight border-b border-transparent hover:border-white/30 truncate">
+                                            +91 99151 04301
+                                        </a>
+                                        <a href="tel:+919872624301" className="text-lg font-light tracking-tight leading-tight border-b border-transparent hover:border-white/30 truncate">
+                                            +91 98726 24301
+                                        </a>
                                     </div>
-                                    <span className="text-lg">info@advancepackwell.com</span>
                                 </div>
-                                <div className="flex items-center gap-4 text-white">
-                                    <div className="flex bg-white/5 p-3 rounded-full border border-white/10">
-                                        <Phone className="size-5 text-secondary" />
-                                    </div>
-                                    <span className="text-lg">+91 98765 43210</span>
-                                </div>
-                                <div className="flex items-center gap-4 text-white">
-                                    <div className="flex bg-white/5 p-3 rounded-full border border-white/10">
-                                        <MapPin className="size-5 text-secondary" />
-                                    </div>
-                                    <span className="text-lg">Advance Packwell, G.T. Road Village Rajgarh, Doraha, Ludhiana, Punjab 141421</span>
-                                </div>
+
+                                <a
+                                    href="https://www.google.com/maps/search/?api=1&query=Advance+Packwell+G.T.+Road+Village+Rajgarh+Doraha+Ludhiana+Punjab+141421"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-start gap-5 text-white group transition-all"
+                                >
+                                    <MapPin className="size-6 text-white stroke-[1.5] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                                    <span className="text-lg font-light tracking-tight leading-tight border-b border-transparent group-hover:border-white/30">
+                                        Advance Packwell, G.T. Road Village Rajgarh, <br />
+                                        Doraha, Ludhiana, Punjab 141421
+                                    </span>
+                                </a>
                             </div>
 
-                            <div className="pt-8">
-                                <Button className="h-12 px-8 text-base font-medium">
-                                    Contact Support
-                                </Button>
+                            <div className="pt-4 flex flex-col items-center gap-4">
+                                <a href="https://wa.me/919915104301" target="_blank" rel="noopener noreferrer">
+                                    <Button className="h-12 px-8 text-base font-medium flex items-center gap-2 bg-primary/60 backdrop-blur-xl border border-white/20 shadow-xl hover:bg-primary/80 transition-all">
+                                        <MessageCircle className="size-5 fill-current" />
+                                        Contact via whatsapp
+                                    </Button>
+                                </a>
+                                <p className="text-sm text-zinc-500 font-light italic">
+                                    ~ average response time 15mins
+                                </p>
                             </div>
                         </div>
                     </div>

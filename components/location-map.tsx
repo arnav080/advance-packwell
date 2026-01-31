@@ -40,8 +40,8 @@ export function LocationMap() {
             {/* Overlay to ensure clicks on the map also trigger redirect if desired, 
           but usually we want users to be able to pan. 
           Let's just make the pin very clear. */}
-            <div className="absolute bottom-4 left-4 z-10 rounded-lg bg-black/60 px-4 py-2 backdrop-blur-md border border-white/10">
-                <p className="text-[10px] uppercase tracking-widest text-secondary font-medium">Click pin to open in Google Maps</p>
+            <div className="absolute bottom-4 left-4 z-10 rounded-lg bg-secondary px-4 py-2 shadow-lg border border-white/20">
+                <p className="text-[10px] uppercase tracking-widest text-white font-medium">Click pin to open in Google Maps</p>
             </div>
         </div>
     );
