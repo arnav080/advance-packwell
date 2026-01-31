@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
+import { LocationMap } from "./location-map";
 
 export function ContactSection() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -62,7 +63,7 @@ export function ContactSection() {
                                     <div className="flex bg-white/5 p-3 rounded-full border border-white/10">
                                         <MapPin className="size-5 text-secondary" />
                                     </div>
-                                    <span className="text-lg">123 Industrial Area, Phase II, New Delhi</span>
+                                    <span className="text-lg">Advance Packwell, G.T. Road Village Rajgarh, Doraha, Ludhiana, Punjab 141421</span>
                                 </div>
                             </div>
 
@@ -74,21 +75,9 @@ export function ContactSection() {
                         </div>
                     </div>
 
-                    {/* Right Column: Map Placeholder */}
+                    {/* Right Column: Interactive Map */}
                     <div className="relative h-[400px] w-full overflow-hidden rounded-[32px] border border-white/10 bg-white/5 lg:h-auto shadow-sm">
-                        {/* Map Placeholder Pattern */}
-                        <div className="absolute inset-0 opacity-5"
-                            style={{
-                                backgroundImage: "radial-gradient(#fff 1px, transparent 1px)",
-                                backgroundSize: "24px 24px"
-                            }}
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="flex flex-col items-center gap-3">
-                                <MapPin className="size-10 text-zinc-600" />
-                                <span className="font-mono text-sm text-zinc-500 uppercase tracking-widest">Map View Integration</span>
-                            </div>
-                        </div>
+                        <LocationMap />
                     </div>
                 </div>
 

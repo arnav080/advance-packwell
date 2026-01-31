@@ -62,7 +62,8 @@ export function FooterSection() {
                                 <div className="flex flex-col gap-1 text-sm">
                                     <span className="text-zinc-500 uppercase tracking-tight font-medium text-xs">Address:</span>
                                     <span className="text-zinc-300 font-light leading-relaxed">
-                                        123 Industrial Area, Phase II, New Delhi
+                                        Advance Packwell, G.T. Road Village Rajgarh, <br />
+                                        Doraha, Ludhiana, Punjab 141421
                                     </span>
                                 </div>
                             </div>
