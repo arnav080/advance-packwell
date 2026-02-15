@@ -3,7 +3,7 @@ import { HeroButton } from "@/components/ui/hero-button";
 import { Case } from "@/components/ui/cases-with-infinite-scroll";
 import { FancyCard } from "@/components/ui/fancy-card";
 import { ArrowUpRight } from "lucide-react";
-import { TestimonialsInfiniteScroll } from "@/components/ui/testimonials-infinite-scroll";
+import { IndustriesSection } from "@/components/industries-section";
 import { GalleryScroll } from "@/components/ui/gallery-scroll";
 import { ContactSection } from "@/components/contact-section";
 import { FooterSection } from "@/components/footer-section";
@@ -17,7 +17,7 @@ export default function Home() {
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/background-main.avif')",
+            backgroundImage: "url('/bg-img-two.jpeg')",
           }}
         >
           <div className="absolute inset-0 bg-background/50" />
@@ -40,9 +40,8 @@ export default function Home() {
           {/* Left Column: Text Content */}
           <div className="flex flex-col justify-center">
             <h2 className="font-helvetica text-4xl font-light leading-none tracking-tight text-white md:text-6xl lg:text-7xl">
-              Packaging for<br />
-              brands that <br />
-              <span className="text-zinc-600">ship at scale.</span>
+              Packaging That<br />
+              <span className="text-zinc-600">Grows With You,</span>
             </h2>
             <div className="mt-10 max-w-lg space-y-6">
               <p className="text-lg leading-relaxed text-zinc-400">
@@ -65,13 +64,13 @@ export default function Home() {
             {/* Metric 2 - Indented */}
             <div className="ml-0 border-l border-zinc-800 pl-8 md:ml-24 lg:ml-32">
               <span className="block font-helvetica text-6xl font-light text-secondary md:text-7xl">10L+</span>
-              <span className="mt-2 block text-sm text-zinc-500">boxes manufactured </span>
+              <span className="mt-2 block text-sm text-zinc-500">boxes manufactured<br />annually</span>
             </div>
 
             {/* Metric 3 */}
             <div className="border-l border-zinc-800 pl-8">
-              <span className="block font-helvetica text-6xl font-light text-secondary md:text-7xl">50+</span>
-              <span className="mt-2 block text-sm text-zinc-500">industry awards<br />for excellence</span>
+              <span className="block font-helvetica text-6xl font-light text-secondary md:text-7xl">30+</span>
+              <span className="mt-2 block text-sm text-zinc-500">Industries Served</span>
             </div>
           </div>
         </div>
@@ -92,20 +91,41 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <FancyCard
-            title="Corrugated Boxes"
-            subheading="Durable, high-strength corrugated boxes designed for secure shipping and storage. Customizable sizes to fit your needs."
-            imageSrc="/cooperation/contract.png"
+            title="Regular Slotted Container (RSC)"
+            imageSrc="/generated/ply-boards.png"
           />
           <FancyCard
-            title="Custom Packaging"
-            subheading="Tailored packaging solutions that reflect your brand identity. Precision-engineered for product protection and display."
+            title="Full Flap Slotted Container (FFSC)"
             imageSrc="/cooperation/odm.png"
           />
           <FancyCard
-            title="Bulk Cartons"
-            subheading="Cost-effective bulk carton solutions for high-volume logistics. Optimized for stacking strength and transport efficiency."
+            title="Pads (DC)"
+            imageSrc="/cooperation/oem.png"
+          />
+          <FancyCard
+            title="Corner Cut Folder (CCF)"
+            imageSrc="/generated/ply-boards.png"
+          />
+          <FancyCard
+            title="Corrugated Cardboard Rolls"
+            imageSrc="/cooperation/odm.png"
+          />
+          <FancyCard
+            title="Five Panel Folder (FPF)"
+            imageSrc="/cooperation/oem.png"
+          />
+          <FancyCard
+            title="Creased and Slotted Trays (CR/SL)"
+            imageSrc="/generated/ply-boards.png"
+          />
+          <FancyCard
+            title="Half Slotted Container (HSC)"
+            imageSrc="/cooperation/odm.png"
+          />
+          <FancyCard
+            title="Partitions/Dividers"
             imageSrc="/cooperation/oem.png"
           />
         </div>
@@ -128,8 +148,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <TestimonialsInfiniteScroll />
+      {/* Industries Section */}
+      <IndustriesSection />
 
       {/* Gallery Section */}
       <section id="gallery" className="relative z-20 mb-[0px] bg-background pb-12">
